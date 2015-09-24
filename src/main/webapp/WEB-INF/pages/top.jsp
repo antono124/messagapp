@@ -15,8 +15,7 @@
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li <c:if test="${fn:endsWith(pageContext.request.requestURI, '/dashboard.jsp')}" >class="active"</c:if> ><a href="dashboard">Dashboard</a></li>
-                <li <c:if test="${fn:endsWith(pageContext.request.requestURI, '/admin.jsp')}" >class="active"</c:if> ><a href="admin">Admin Page</a></li>
-                <li <c:if test="${fn:endsWith(pageContext.request.requestURI, '/object.jsp')}" >class="active"</c:if> ><a href="object">Objects</a></li>
+                <li <c:if test="${fn:endsWith(pageContext.request.requestURI, '/message.jsp')}" >class="active"</c:if> ><a href="message">Messages</a></li>
             </ul>
         </div>
     </div>

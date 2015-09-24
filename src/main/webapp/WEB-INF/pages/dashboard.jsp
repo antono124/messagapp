@@ -31,22 +31,26 @@
 <jsp:include page="top.jsp" />
 
 <div class="container">
-    <div class="starter-template">
 
-        <h1>Dashboard</h1>
+    <h1>Dashboard</h1>
 
-        <p class="lead">The ultimate dashboard!</p><br />
+    <p class="lead">Choose one button</p><br />
 
-        <c:out value='${message}' /><br />
 
-        <c:if test="${pageContext.request.userPrincipal.name != null}">
-            <h2>
-                Welcome : ${pageContext.request.userPrincipal.name}
-                | <a href="javascript:formSubmit()"> Logout</a>
-            </h2>
-        </c:if>
+    <button type="button" class="btn btn-success" onclick="location.href=''">Green Button</button>
+    <button type="button" class="btn btn-danger">Red Button</button>
+    <br/>
 
-    </div>
+
+    <c:if test="${pageContext.request.userPrincipal.name != null}">
+        <h2>
+            Welcome : ${pageContext.request.userPrincipal.name}
+            | <a href="javascript:formSubmit()"> Logout</a>
+        </h2>
+    </c:if>
+
+
+
 </div>
 
 
