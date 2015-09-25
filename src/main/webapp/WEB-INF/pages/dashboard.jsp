@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -34,22 +35,24 @@
 
     <h1>Dashboard</h1>
 
-    <p class="lead">Choose one button</p><br />
+    <p class="lead"> ${pageContext.request.userPrincipal.name} Choose one button</p><br />
 
+    <form:form action="/messagapp/chooseColor" commandName="colorForm" method="get" cssClass="form-signin">
 
-    <button type="button" class="btn btn-success" onclick="location.href=''">Green Button</button>
-    <button type="button" class="btn btn-danger">Red Button</button>
+        <h2 class="form-signin-heading">Choose color</h2>
+
+        <form:select path="color" cssClass="form-control">
+            <form:option value="green" label="Green" cssClass="form-control"/>
+            <form:option value="red" label="Red" cssClass="form-control"/>
+        </form:select>
+
+        <button class="btn btn-default" type="submit">OK</button>
+
+    </form:form>
+
     <br/>
 
-
-    <c:if test="${pageContext.request.userPrincipal.name != null}">
-        <h2>
-            Welcome : ${pageContext.request.userPrincipal.name}
-            | <a href="javascript:formSubmit()"> Logout</a>
-        </h2>
-    </c:if>
-
-
+   <a href="javascript:formSubmit()"> Logout</a>
 
 </div>
 

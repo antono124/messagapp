@@ -1,14 +1,14 @@
 package com.antogeo.observer;
 
-import com.antogeo.utils.ButtonType;
+import com.antogeo.utils.Color;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.Observable;
 
 
-@Component("completeContestNotificationObserver")
-public class PressButtonNotificationObserver  extends NotificationObserver {
+@Component("chooseColorNotificationObserver")
+public class ChooseColorNotificationObserver extends NotificationObserver {
 
     @Autowired
     private MessageLogic messageLogic;
@@ -16,6 +16,6 @@ public class PressButtonNotificationObserver  extends NotificationObserver {
     @Override
     public void update(Observable o,  Object arg) {
 
-        messageLogic.buildAndSendButtonMessage((ButtonType) arg);
+        messageLogic.buildAndSendColorMessage((Color) arg);
     }
 }

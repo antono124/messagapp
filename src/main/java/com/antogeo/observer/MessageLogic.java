@@ -4,7 +4,7 @@ import com.antogeo.entity.Message;
 import com.antogeo.entity.User;
 import com.antogeo.service.MessageService;
 import com.antogeo.service.UserService;
-import com.antogeo.utils.ButtonType;
+import com.antogeo.utils.Color;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -21,10 +21,10 @@ public class MessageLogic {
     private UserService userService;
 
 
-    protected void buildAndSendButtonMessage(ButtonType buttonType){
+    protected void buildAndSendColorMessage(Color color){
 
         String buttonColor;
-        if(buttonType.equals(ButtonType.GREEN)){
+        if(color.equals(Color.GREEN)){
             buttonColor = "green";
         }else{
             buttonColor = "red";

@@ -1,7 +1,7 @@
 package com.antogeo.utils;
 
 
-public enum ButtonType {
+public enum Color {
 
     GREEN,
     RED
