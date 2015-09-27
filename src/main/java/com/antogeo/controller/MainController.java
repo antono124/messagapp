@@ -3,6 +3,7 @@ package com.antogeo.controller;
 import com.antogeo.form.ColorForm;
 import com.antogeo.form.LoginForm;
 import com.antogeo.observer.ChooseColorNotificationObserver;
+import com.antogeo.service.MessageService;
 import com.antogeo.service.UserService;
 import com.antogeo.utils.Color;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
+import java.util.List;
 import javax.validation.Valid;
 
 
@@ -22,6 +24,9 @@ public class MainController {
 
     @Autowired
     private ChooseColorNotificationObserver obs;
+
+    @Autowired
+    MessageService messageService;
 
 
     @RequestMapping(value = { "/", "/login" }, method = {RequestMethod.GET, RequestMethod.POST})
@@ -84,6 +89,17 @@ public class MainController {
         userService.saveColor(colorEnum, principal);
 
         return "dashboard";
+    }
+
+    @RequestMapping(value = "/messages", method = RequestMethod.GET)
+    public String viewMessages(Model model){
+
+       // List<Message> messages = messageService.getMessagesByUserId(userDTO.getUser().getUserId());
+
+
+       // model.addAttribute("messages", messages);
+
+        return "messages";
     }
 
 }
