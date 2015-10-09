@@ -1,5 +1,6 @@
 package com.antogeo.controller;
 
+import com.antogeo.entity.Message;
 import com.antogeo.form.ColorForm;
 import com.antogeo.form.LoginForm;
 import com.antogeo.observer.ChooseColorNotificationObserver;
@@ -26,7 +27,7 @@ public class MainController {
     private ChooseColorNotificationObserver obs;
 
     @Autowired
-    MessageService messageService;
+    private MessageService messageService;
 
 
     @RequestMapping(value = { "/", "/login" }, method = {RequestMethod.GET, RequestMethod.POST})
@@ -94,12 +95,11 @@ public class MainController {
     @RequestMapping(value = "/messages", method = RequestMethod.GET)
     public String viewMessages(Model model){
 
-       // List<Message> messages = messageService.getMessagesByUserId(userDTO.getUser().getUserId());
+       List<Message> messages = messageService.getMessages();
 
+       model.addAttribute("messages", messages);
 
-       // model.addAttribute("messages", messages);
-
-        return "messages";
+       return "messages";
     }
 
 }

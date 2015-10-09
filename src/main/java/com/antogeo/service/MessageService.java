@@ -6,11 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 public class MessageService {
 
     @Autowired
-    MessageDao messageDao;
+    private MessageDao messageDao;
 
 
     @Transactional(readOnly = false)
@@ -18,6 +20,12 @@ public class MessageService {
 
         Message message = (Message) o;
         return messageDao.insert(message);
+    }
+
+    @Transactional(readOnly = true)
+    public List<Message> getMessages(){
+
+        return messageDao.getMessages();
     }
 
     public void setMessageDao(MessageDao messageDao) {

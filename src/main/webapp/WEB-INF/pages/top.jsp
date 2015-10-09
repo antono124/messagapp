@@ -10,12 +10,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">SuperApp</a>
+            <a class="navbar-brand" href="#">Messagapp</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li <c:if test="${fn:endsWith(pageContext.request.requestURI, '/dashboard.jsp')}" >class="active"</c:if> ><a href="dashboard">Dashboard</a></li>
-                <li <c:if test="${fn:endsWith(pageContext.request.requestURI, '/message.jsp')}" >class="active"</c:if> ><a href="message">Messages</a></li>
+                <li <c:if test="${fn:endsWith(pageContext.request.requestURI, '/messages.jsp')}" >class="active"</c:if> ><a href="messages">Messages</a></li>
             </ul>
         </div>
     </div>

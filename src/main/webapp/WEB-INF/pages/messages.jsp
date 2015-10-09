@@ -17,24 +17,21 @@
 <jsp:include page="top.jsp" />
 
 <div class="container">
-    <div class="starter-template">
 
-        <div class="row" style="background-color:#D8F6CE;">
-            <div class="col-sm-6">
-                <h1 align="left">Messages</h1>
-            </div>
-        </div>
+    <div class="page-header">
+    <h1>Messages <small>Check whats new</small></h1>
+    </div>
 
-
-        <h2>Messages</h2>
+    <div class="list-group">
 
         <c:forEach items="${messages}" var="message">
-            <div class="list-group">
-                <a href="#" class="list-group-item active">
-                List of messages
-                </a>
-            </div>
+            <a class="list-group-item">
+                <h4 class="list-group-item-heading">${message.title}</h4>
+                <p><span style="color: blue;">${message.creationDate}</span></p>
+                <p class="list-group-item-text">${message.body}</p>
+            </a>
         </c:forEach>
+
     </div>
 </div>
 

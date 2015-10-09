@@ -33,15 +33,16 @@
 
 <div class="container">
 
-    <h1>Dashboard</h1>
+    <div class="page-header">
+        <h1>Messages <small> Choose color</small></h1>
+    </div>
 
-    <p class="lead"> ${pageContext.request.userPrincipal.name} Choose one button</p><br />
 
-    <form:form action="/messagapp/chooseColor" commandName="colorForm" method="get" cssClass="form-signin">
+    <form:form action="/messagapp/chooseColor" commandName="colorForm" method="get" class="form-inline">
 
         <h2 class="form-signin-heading">Choose color</h2>
 
-        <form:select path="color" cssClass="form-control">
+        <form:select path="color" cssClass="form-control" cssStyle="width: 30%;">
             <form:option value="green" label="Green" cssClass="form-control"/>
             <form:option value="red" label="Red" cssClass="form-control"/>
         </form:select>
